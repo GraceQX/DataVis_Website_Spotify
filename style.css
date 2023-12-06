@@ -1,0 +1,411 @@
+/*Main*/
+body {
+    /* Placeholder for the background image path */
+    background-color: white;
+    color: rgb(0, 0, 0);
+    font-family: Arial, sans-serif;
+}
+
+/* h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: blueviolet;
+} */
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: gray;
+}
+
+
+
+/*radar*/
+.radar-circle {
+    fill: none;
+    stroke: #CCCCCC;
+    stroke-width: 0.5;
+}
+
+.radar-line {
+    fill: none;
+    stroke: rgb(187, 207, 205);
+    stroke-width: 2;
+}
+
+.genre-controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.genre-controls label {
+    margin: 0 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    /* Makes it clear that the label can be clicked */
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.genre-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.all-genres-icon {
+    background-image: url('images/spotify_icon1.png');
+}
+
+.punk-rock-icon {
+    background-image: url('images/drum.png');
+}
+
+.pop-icon {
+    background-image: url('images/compact-disc.png');
+}
+
+.acoustic-icon {
+    background-image: url('images/sound.png');
+}
+
+
+.bubbles {
+    stroke-width: 2px;
+    stroke: white;
+}
+
+.bubbles:hover {
+    stroke: black;
+}
+
+/* #radarChart {
+    float: left;
+    margin-left: 60px;
+} */
+.right_col {
+    min-height: 100%;
+  }
+
+
+#showAllGenresButton {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 10px;
+    background-image: url('images/spotify_icon1.png');
+    /* Replace with your icon path */
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    padding-left: 30px;
+    /* Adjust based on your icon size */
+}
+
+/*Slider and world map*/
+#worldMap {
+    background-color: white;
+}
+
+.slider-container {
+    position: relative;
+    width: 90%;
+    margin: 20px auto;
+    z-index: 10;
+    /* Ensure the slider is above the map */
+}
+
+.year-slider {
+    width: 100%;
+    height: 25px;
+    background: transparent;
+    outline: none;
+    -webkit-appearance: none;
+}
+
+.year-slider::-webkit-slider-thumb {
+    /* -webkit-appearance: none; */
+    /* appearance: none; */
+    width: 25px;
+    height: 25px;
+    background-image: url('./icon_spotify_green.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    border-radius: 50%;
+    opacity: 1;
+    /* Fully opaque when not dragging */
+    transition: opacity 0.3s;
+}
+
+
+.year-slider::-webkit-slider-thumb:active {
+    /* When the thumb is being dragged */
+    background-image: url('./icon_spotify_dark.png');
+    opacity: 0.8;
+    /* 50% transparent */
+}
+
+.year-slider::-webkit-slider-thumb:hover {
+    background-image: url('./icon_spotify_dark.png');
+    opacity: 0.8;
+    /* 50% transparent */
+}
+
+.year-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background-image: url('./icon_spotify_green.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    border-radius: 50%;
+    opacity: 1;
+    /* Fully opaque when not dragging */
+}
+
+.year-slider::-moz-range-thumb:active {
+    /* When the thumb is being dragged */
+    background-image: url('./icon_spotify_green.png');
+    opacity: 0.8;
+    /* 50% transparent */
+}
+
+.year-slider::-webkit-slider-thumb:hover {
+    background-image: url('./icon_spotify_dark.png');
+    opacity: 0.8;
+    /* 50% transparent */
+}
+
+.year-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: #ddd;
+    border-radius: 1px;
+    border: 0.2px solid #010101;
+}
+
+/* 
+.year-slider::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    background: #ddd;
+    border-radius: 1px;
+} */
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.start-label,
+.end-label,
+.current-label {
+    font-size: 12px;
+    color: #333;
+}
+
+.current-label {
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+
+/*ridge*/
+.xAxis line {
+    stroke: #B8B8B8;
+}
+
+/* Add other styles as needed */
+
+/*parallel*/
+.axis {
+    opacity: 0.4;
+}
+
+.axis:hover {
+    opacity: 1;
+}
+
+/* 
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url('contrasticon.png');
+    cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+    width: 23px;
+    height: 25px;
+    border: 0;
+    background: url('contrasticon.png');
+    cursor: pointer;
+} */
+
+/*legend*/
+.title_left h3 {
+    display: flex;
+    align-items: center;
+  }
+  
+  .genre-legend {
+    display: flex;
+    margin-left: 20px; /* Adjust as needed */
+  }
+
+.genre-legend {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Space between legend items */
+  }
+  
+  .color-box {
+    width: 20px; /* Width of each color box */
+    height: 20px; /* Height of each color box */
+  }
+  
+  .genre-label {
+    font-size: 14px;
+    margin-left: 5px; /* Space between color box and label */
+  }
+
+#tsne {
+    background-color: white;
+}
+
+#area-container {
+    width: 100%;
+    height: 350px;
+    position: relative;
+  }
+  
+#area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+#tsne-container {
+    width: 100%;
+    height: 350px;
+    position: relative;
+  }
+  
+#tsne {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+#parallel-container {
+    width: 100%;
+    height: 430px;
+  }
+
+#parallel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+#bubble-container {
+    width: 100%;
+    height: 200px;
+  }
+
+#bubble {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+#worldMap-container {
+    width: 100%;
+    height: 500px;
+  }
+
+#worldMap {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+#colorKey-container {
+    width: 100%;
+    height: 50px;
+  }
+
+#colorKey {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+#radar-container {
+    width: 100%;
+    height: 444px;
+  }
+
+#radarChart {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    float: center;
+    margin-left: 60px;
+  }
+
+#ridge-container {
+    width: 100%;
+    height: 400px;
+  }
+#ridgeChart {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
