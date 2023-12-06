@@ -8,12 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" href="images/favicon.ico" type="image/ico" />
-  <script>
-    var new_genre = "electronic"
-    var fulColor = "#767641"
-    var midColor = '#8F904E'
-    var nonColor = "#DBDBBD"
-  </script>
+
   <title>Spotify Music Trend </title>
 
   <!-- Bootstrap -->
@@ -37,13 +32,19 @@
   <link href="../vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
   <!-- d3js -->
   <!-- <script src="https://d3js.org/d3.v6.min.js"></script> -->
-
+  <script>
+    var new_genre = "metal"
+    var fulColor = "#306373"
+    var midColor = '#A1CCD9'
+    var nonColor = "#A9CFDB"
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://d3js.org/d3.v3.min.js"></script>
   <script src="https://d3js.org/topojson.v3.min.js"></script>
+  <!-- <link rel="stylesheet" href="../src/js/styles.css"> -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -86,24 +87,37 @@
               </ul>
             </div>
           </div>
+
           <!-- /sidebar menu -->
         </div>
       </div>
 
-      <!-- page content -->
+      <!-- top navigation -->
+      <div class="top_nav">
+        <div class="nav_menu">
+          <div class="nav toggle">
+            <a id="menu_toggle"><i class="fa fa-bars"></i></a>
+          </div>
+          <nav class="nav navbar-nav">
+            <ul class=" navbar-right">
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <!-- /top navigation -->
 
+      <!-- page content -->
       <div class="right_col" role="main">
         <div class="">
           <div class="page-title">
             <div class="title_left">
-              <h3>Electronic</h3>
+              <h3>Metal</h3>
             </div>
           </div>
 
           <div class="clearfix"></div>
 
           <div class="row">
-            <!-- Parallel Graph -->
             <div class="col-md-8 col-sm-8  ">
               <!-- area graph-->
               <div class="col-md-12 col-sm-12  ">
@@ -113,16 +127,19 @@
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
+                    <!-- <svg id="bubble" width="990" height="200"></svg> -->
                     <div id="bubble-container">
                       <svg id="bubble"></svg>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-md-12 col-sm-12" style="text-align:center;">
+              
+              <!-- Map -->
+              <div class="col-md-12 col-sm-12  " style="text-align:center;">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Geographic Music Trending </h2>
+                    <h2>Geographic Music Trending</h2>
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
@@ -139,7 +156,7 @@
               </div>
             </div>
 
-            <!-- t-sne chart-->
+            <!-- Genre Analysis-->
             <div class="col-md-4 col-sm-4  ">
               <div class="x_panel">
                 <div class="x_title">
@@ -153,10 +170,11 @@
                   <div id = "ridge-container">
                     <svg id="ridgeChart"></svg>
                   </div>
+                  <!-- <svg id='radarChart' width="500" height="400"></svg>
+                  <svg id='ridgeChart' width="500" height="400"></svg> -->
                 </div>
               </div>
             </div>
-
             <div class="col-md-12 col-sm-12">
               <div class="slider-container">
                 <input type="range" class="year-slider" id="yearSlider" min="2000" max="2023" value="2000" step="1">
@@ -167,10 +185,11 @@
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
+      <!-- page content -->
+
       <!-- footer content -->
       <footer>
         <div class="pull-right">
@@ -232,13 +251,11 @@
     <!-- <script src="../src/js/ridge.js"></script> -->
     <!-- <script src="../src/js/parallel.js"></script> -->
     <!-- <script src="../src/js/tsne.js"></script> -->
-    <script src="../src/js/ridge.js"></script>
-    <script src="../src/js/worldMap.js"></script>
-    <script src="../src/js/bubble.js"></script>
-    <script src="../src/js/radar.js"></script>
-    <!-- <script src="../src/js/parallel.js"></script> -->
-    <script src="../src/js/navToggle.js"></script>
-
+    <script src="./src/js/ridge.js"></script>
+    <script src="./src/js/worldMap.js"></script>
+    <script src="./src/js/bubble.js"></script>
+    <script src="./src/js/radar.js"></script>
+    <script src="./src/js/navToggle.js"></script>
 
     <!-- <script src="../src/js/pie.js"></script> -->
 
